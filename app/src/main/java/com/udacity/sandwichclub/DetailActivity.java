@@ -13,24 +13,33 @@ import com.udacity.sandwichclub.utils.JsonUtils;
 
 import org.json.JSONException;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class DetailActivity extends AppCompatActivity {
 
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
-   TextView MainName , Also_Known , Ingredant , Place_of ,Description ;
-   Sandwich sandwich;
+   //TextView MainName , Also_Known , Ingredant , Place_of ,Description ;
+   Sandwich sandwich=null;
+   @BindView(R.id.image_iv) ImageView ingredientsIv;
+   @BindView(R.id.main_name_tv) TextView MainName;
+    @BindView(R.id.also_known_tv) TextView Also_Known;
+    @BindView(R.id.ingredients_tv) TextView Ingredant;
+    @BindView(R.id.origin_tv) TextView Place_of;
+    @BindView(R.id.description_tv) TextView Description;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        sandwich=new Sandwich();
-        ImageView ingredientsIv = findViewById(R.id.image_iv);
+        ImageView ingredientsIv=findViewById(R.id.image_iv);
         MainName=findViewById(R.id.main_name_tv);
         Also_Known=findViewById(R.id.also_known_tv);
         Ingredant=findViewById(R.id.ingredients_tv);
         Place_of=findViewById(R.id.origin_tv);
         Description=findViewById(R.id.description_tv);
-
+        sandwich=new Sandwich();
+        ButterKnife.bind(this);
         Intent intent = getIntent();
         if (intent == null) {
             //closeOnError();
