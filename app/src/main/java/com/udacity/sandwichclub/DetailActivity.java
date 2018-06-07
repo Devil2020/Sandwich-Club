@@ -33,11 +33,11 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         ImageView ingredientsIv=findViewById(R.id.image_iv);
-        MainName=findViewById(R.id.main_name_tv);
+        /*MainName=findViewById(R.id.main_name_tv);
         Also_Known=findViewById(R.id.also_known_tv);
         Ingredant=findViewById(R.id.ingredients_tv);
         Place_of=findViewById(R.id.origin_tv);
-        Description=findViewById(R.id.description_tv);
+        Description=findViewById(R.id.description_tv);*/
         sandwich=new Sandwich();
         ButterKnife.bind(this);
         Intent intent = getIntent();
